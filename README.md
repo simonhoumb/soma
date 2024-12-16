@@ -1,3 +1,3 @@
 # Soma Engine
 
-Simulation-Oriented Modelling Architecture
+Simulation-Oriented Modeling Architecture
