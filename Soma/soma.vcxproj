@@ -58,6 +58,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SM_PLATFORM_WINDOWS;SM_BUILD_DLL</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Soma\vendor\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -72,6 +74,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SM_PLATFORM_WINDOWS;SM_BUILD_DLL</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Soma\vendor\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -81,9 +85,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Soma\Log.cpp" />
     <ClCompile Include="src\Soma\Application.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Soma\Log.h" />
     <ClInclude Include="src\Soma.h" />
     <ClInclude Include="src\Soma\Application.h" />
     <ClInclude Include="src\Soma\Core.h" />
