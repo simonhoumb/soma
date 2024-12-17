@@ -23,6 +23,7 @@ project "Soma"
     }
 
     includedirs {
+        "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include"
     }
 
@@ -34,24 +35,24 @@ project "Soma"
         systemversion "latest"
 
         defines {
-            "SM_PLATFORM_WINDOWS",
-            "SM_BUILD_DLL"
+            "SOMA_PLATFORM_WINDOWS",
+            "SOMA_BUILD_DLL"
         }
 
         postbuildcommands {
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+            ("{COPYFILE} %[./bin/" .. outputdir .. "/%{prj.name}/%{prj.name}.dll] %[./bin/" .. outputdir .. "/Sandbox/%{prj.name}.dll]")
         }
 
     filter "configurations:Debug"
-        defines "SM_DEBUG"
+        defines "SOMA_DEBUG"
         symbols "On"
 
     filter "configurations:Release"
-        defines "SM_RELEASE"
+        defines "SOMA_RELEASE"
         optimize "On"
 
     filter "configurations:Dist"
-        defines "SM_DIST"
+        defines "SOMA_DIST"
         optimize "On"
 
 
@@ -86,17 +87,17 @@ project "Sandbox"
         systemversion "latest"
 
         defines {
-            "SM_PLATFORM_WINDOWS",
+            "SOMA_PLATFORM_WINDOWS",
         }
 
     filter "configurations:Debug"
-        defines "SM_DEBUG"
+        defines "SOMA_DEBUG"
         symbols "On"
 
     filter "configurations:Release"
-        defines "SM_RELEASE"
+        defines "SOMA_RELEASE"
         optimize "On"
 
     filter "configurations:Dist"
-        defines "SM_DIST"
+        defines "SOMA_DIST"
         optimize "On"

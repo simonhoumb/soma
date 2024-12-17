@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef SM_PLATFORM_WINDOWS
+#ifdef SOMA_PLATFORM_WINDOWS
 
 extern Soma::Application* Soma::CreateApplication();
 

@@ -1,7 +1,7 @@
 #pragma once
 
-#ifdef SM_PLATFORM_WINDOWS
-	#ifdef SM_BUILD_DLL
+#ifdef SOMA_PLATFORM_WINDOWS
+	#ifdef SOMA_BUILD_DLL
 		#define SOMA_API __declspec(dllexport)
 	#else
 		#define SOMA_API __declspec(dllimport)
@@ -9,3 +9,5 @@
 #else 
 	#error Soma only supports Windows
 #endif
+
+#define BIT(x) (1 << x)
