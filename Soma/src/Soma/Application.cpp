@@ -1,4 +1,7 @@
 #include "Application.h"
+#include "Soma/Log.h"
+#include "Soma/Events/ApplicationEvent.h"
+#include "Soma/Events/MouseEvent.h"
 
 namespace Soma {
 
@@ -11,8 +14,8 @@ namespace Soma {
 	}
 
 	void Application::Run() {
-		while (true) {
-
-		}
+		WindowResizeEvent e1(1920, 1080);
+		SOMA_CORE_TRACE(e1.ToString());
+		while (true) {}
 	}
 }
