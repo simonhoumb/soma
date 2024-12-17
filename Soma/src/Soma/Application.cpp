@@ -1,13 +1,12 @@
 #include "smpch.h"
 #include "Application.h"
-#include "Soma/Log.h"
 #include "Soma/Events/ApplicationEvent.h"
 #include "Soma/Events/MouseEvent.h"
 
 namespace Soma {
 
 	Application::Application() {
-
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application() {
@@ -15,8 +14,8 @@ namespace Soma {
 	}
 
 	void Application::Run() {
-		WindowResizeEvent e1(1920, 1080);
-		SOMA_CORE_TRACE(e1.ToString());
-		while (true) {}
+		while (m_Running) {
+			m_Window->OnUpdate();
+		}
 	}
 }

@@ -1,5 +1,4 @@
 #include "smpch.h"
-#include "Log.h"
 
 namespace Soma {
 	std::shared_ptr<spdlog::logger> Log::s_CoreLogger;
