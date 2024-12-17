@@ -1,9 +1,7 @@
 #pragma once
 
+#include "smpch.h"
 #include "Soma/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Soma {
 

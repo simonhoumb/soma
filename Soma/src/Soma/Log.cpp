@@ -1,3 +1,4 @@
+#include "smpch.h"
 #include "Log.h"
 
 namespace Soma {

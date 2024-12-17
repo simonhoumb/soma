@@ -1,3 +1,4 @@
+#include "smpch.h"
 #include "Application.h"
 #include "Soma/Log.h"
 #include "Soma/Events/ApplicationEvent.h"

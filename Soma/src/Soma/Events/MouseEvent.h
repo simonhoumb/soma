@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Soma {
     class SOMA_API MouseMovedEvent : public Event {
     public:
