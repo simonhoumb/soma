@@ -2,6 +2,8 @@
 **/bin/
 bin-int/
 !vendor/bin/
+!vendor/bin/premake/
+!vendor/bin/premake/**
 
 
 ###########################
