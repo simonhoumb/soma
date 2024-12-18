@@ -1,6 +1,8 @@
 # Directories
-**bin/
+**/bin/
 bin-int/
+!vendor/bin/
+
 
 ###########################
 ## Visual Studio Related ##
