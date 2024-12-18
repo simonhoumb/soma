@@ -13,6 +13,7 @@
 #include <unordered_set>
 
 #include "Soma/Log.h"
+#include <spdlog/fmt/ostr.h>
 
 #ifdef SOMA_PLATFORM_WINDOWS
     #include <Windows.h>
