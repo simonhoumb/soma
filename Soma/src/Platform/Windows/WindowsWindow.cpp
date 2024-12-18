@@ -1,12 +1,17 @@
 #include "smpch.h"
+
 #include "Platform/Windows/WindowsWindow.h"
+
 #include "Soma/Events/ApplicationEvent.h"
 #include "Soma/Events/KeyEvent.h"
 #include "Soma/Events/MouseEvent.h"
 
+#include "glad/glad.h"
+
 namespace Soma {
 
     static bool s_GLFWInitialized = false;
+
     static void GLFWErrorCallback(int error, const char* description) {
         SOMA_CORE_ERROR("GLFW Error {0}: {1}", error, description);
     }
@@ -40,6 +45,10 @@ namespace Soma {
 
         m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_Window);
+
+        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+        SOMA_CORE_ASSERT(status, "Failed to initialize Glad")
+
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
 

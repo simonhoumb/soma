@@ -11,8 +11,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Soma/vendor/GLFW/include"
+IncludeDir["glad"] = "Soma/vendor/glad/include"
 
 include "Soma/vendor/GLFW"
+include "Soma/vendor/glad"
 
 project "Soma"
 	location "Soma"
@@ -27,17 +29,19 @@ project "Soma"
 
 	files {
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/src/**.cpp"
 	}
 
 	includedirs {
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.glad}"
 	}
 
 	links {
 		"GLFW",
+		"glad",
 		"opengl32.lib"
 	}
 
@@ -50,7 +54,8 @@ project "Soma"
 
 		defines {
 			"SOMA_PLATFORM_WINDOWS",
-			"SOMA_BUILD_DLL"
+			"SOMA_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands {
