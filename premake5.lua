@@ -41,7 +41,7 @@ project "Soma"
 		"opengl32.lib"
 	}
 
-	buildoptions{"/utf-8"}
+	buildoptions {"/utf-8"}
 
 	filter "system:windows" 
 		cppdialect "C++17"
@@ -59,14 +59,17 @@ project "Soma"
 
 	filter "configurations:Debug"
 		defines "SOMA_DEBUG"
+		buildoptions {"/MDd"}
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "SOMA_RELEASE"
+		buildoptions {"/MD"}
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "SOMA_DIST"
+		buildoptions {"/MD"}
 		optimize "On"
 
 
@@ -106,12 +109,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "SOMA_DEBUG"
+		buildoptions {"/MDd"}
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "SOMA_RELEASE"
+		buildoptions {"/MD"}
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "SOMA_DIST"
+		buildoptions {"/MD"}
 		optimize "On"
