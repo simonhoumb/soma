@@ -4,3 +4,6 @@
 [submodule "Soma/vendor/GLFW"]
 	path = Soma/vendor/GLFW
 	url = https://github.com/simonhoumb/glfw.git
+[submodule "imgui"]
+	path = Soma/vendor/imgui
+	url = https://github.com/simonhoumb/imgui.git
